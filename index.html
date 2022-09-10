@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section {
+            background-color: #222426;
+            color: gray;
+            padding: 20px;
+        }
+
+        .section:hover {
+            background-color: blue;
+        }
+
+        .content {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            display: none;
+        }
+
+        body {
+            background-color: #181A1B;
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .mark {
+            float: right;
+            color: white;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Acordian</h1>
+    <div class="container">
+        <div>
+            <div class="section" onclick="toggle()">
+                Section 1
+                <p class="mark">+</p>
+            </div>
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsa praesentium quam dicta iure
+                perspiciatis blanditiis voluptatem consequatur, in vitae error impedit a maxime nulla, eius odit cum sit
+                voluptas?
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        content = document.getElementsByClassName("content")[0];
+        mark = document.getElementsByClassName("mark")[0];
+
+        function toggle() {
+            if (content.style.display == "none") {
+                content.style.display = "block";
+                mark.innerHTML = "-";
+
+            }
+            else {
+                content.style.display = "none";
+                mark.innerHTML = "+";
+            }
+        }
+    </script>
+</body>
+
+</html>
