@@ -46,8 +46,26 @@
     <h1>Acordian</h1>
     <div class="container">
         <div>
-            <div class="section" onclick="toggle()">
+            <div class="section">
                 Section 1
+                <p class="mark">+</p>
+            </div>
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsa praesentium quam dicta iure
+                perspiciatis blanditiis voluptatem consequatur, in vitae error impedit a maxime nulla, eius odit cum sit
+                voluptas?
+            </div>
+            <div class="section">
+                Section 2
+                <p class="mark">+</p>
+            </div>
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsa praesentium quam dicta iure
+                perspiciatis blanditiis voluptatem consequatur, in vitae error impedit a maxime nulla, eius odit cum sit
+                voluptas?
+            </div>
+            <div class="section">
+                Section 3
                 <p class="mark">+</p>
             </div>
             <div class="content">
@@ -60,20 +78,26 @@
 
     </div>
     <script>
-        content = document.getElementsByClassName("content")[0];
-        mark = document.getElementsByClassName("mark")[0];
+        section = document.getElementsByClassName("section");
+        for (i = 0; i < section.length; i++) {
+            section[i].addEventListener("click", function () {
+                mark = this.children[0];
+                sibling = this.nextElementSibling;
+                if (sibling.style.display == "none") {
+                    sibling.style.display = "block";
+                    mark.innerHTML = "-";
 
-        function toggle() {
-            if (content.style.display == "none") {
-                content.style.display = "block";
-                mark.innerHTML = "-";
-
-            }
-            else {
-                content.style.display = "none";
-                mark.innerHTML = "+";
-            }
+                }
+                else {
+                    sibling.style.display = "none";
+                    mark.innerHTML = "+";
+                }
+            });
         }
+
+
+
+
     </script>
 </body>
 
